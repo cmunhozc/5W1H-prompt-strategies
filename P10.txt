@@ -1,0 +1,69 @@
+You will be provided with a news article. Your task is to answer the 5W1H questions: What, Who, When, Where, Why, and How, based strictly on the provided content. Your answers should be clear, concise, and focused. Please follow these guidelines for each question:
+
+                      1. **What**: Identify the key facts, actions, or circumstances mentioned in the article. Exclude any additional context, background information, or opinions.
+                      2. **Who**: Identify the main subject or entity involved in the article. Avoid including extra details about actions or locations.
+                      3. **When**: Specify the relevant time or date when the events occurred. Do not add extra information about impacts or reactions.
+                      4. **Where**: Indicate the location where the event occurred. Avoid mentioning individuals or specific actions that happened in that location.
+                      5. **Why**: Explain the reasons or causes behind the event. Focus solely on the causes mentioned in the article without adding external context or opinions.
+                      6. **How**: Describe the manner or method in which the event occurred. Look for verbs or structures that explain the process or steps involved.
+
+                      If a relevant answer cannot be found for any question, respond with an empty string (''). Make sure your answers are based entirely on the content of the article, avoiding unsupported information, personal opinions, or extraneous details. Use only excerpts from the provided context. **This is a fundamental requirement.** Separate different answers with semicolons (';').
+
+                      Here is an example of how to structure your responses:
+
+                      **Example 1:**
+                      Title: *Hawaii group wants to defend licenses for foreign fishermen.*
+                      Description: *HONOLULU — A group representing Hawaii commercial fishermen has filed a court motion to defend the state’s practice of giving fishing licenses to foreign workers.*
+                      News Body:  *The Hawaii Longline Association sought court permission last week to argue its side after a Maui resident asked a judge to declare that only those lawfully admitted to the United States should receive commercial fishing licenses. Resident Malama Chun went to court after an Associated Press investigation found hundreds of foreign workers in the Hawaii fleet were confined to boats, and some were living in subpar conditions. […].*
+
+                      **Answers with step-by-step reasoning:**
+
+                      1. **What**:
+                      - Step 1: Identify key sentence structures (e.g., NP-VP-NP or NP-VP-PP) that highlight the core facts and actions in the article.
+                      - Step 2: Eliminate any secondary details or information not central to answer the "what" question.
+                      - Step 3: Select the sentences that best answer the "What" question under the structure VP-NP or VP-PP part.
+                      - **Answer**: *wants to defend licenses for foreign fishermen*
+
+                      2. **Who**:
+                      - Step 1: Focus on the noun phrases in the sentence structures identified in the "What" analysis.
+                      - Step 2: Identify the main subjects or entities responsible for the central action.
+                      - **Answer**: *Hawaii group*
+
+                      3. **When**:
+                      - Step 1: Identify explicit or implied dates and times within the article.
+                      - Step 2: Select the most relevant date or time-related to the main event.
+                      - **Answer**: *last week*
+
+                      4. **Where**:
+                      - Step 1: Identify named entities tagged as locations.
+                      - Step 2: Choose the locations most relevant to the event.
+                      - **Answer**: *Hawaii*
+
+                      5. **Why**:
+                      - Step 1: Look for causal phrases, conjunctions, or structures that explain the reason behind the event.
+                      - Step 2: Select the cause that directly connects to the event identified in the "What" analysis.
+                      - **Answer**: *a Maui resident asked a judge to declare that only those lawfully admitted to the United States should receive commercial fishing licenses*
+
+                      6. **How**:
+                      - Step 1: Extract sentences or phrases that describe the process or method of how the event happened.
+                      - Step 2: Identify any adverbs or adjectives that give insight into the manner of the action.
+                      - **Answer**: *filed a court motion*
+
+                      Now, proceed with answering the 5W1H questions for the provided news article using this format.
+
+      {
+        "role": "user",
+        "content": (
+          "Here is the news article:\n"
+          f"Title: {title_}\n"
+          f"Description: {description_}\n"
+          f"News Body: {news_body_}\n"
+          "Please answer the following questions based on the context provided.\n"
+          "1. What:\n"
+          "2. Who:\n"
+          "3. When:\n"
+          "4. Where:\n"
+          "5. Why:\n"
+          "6. How:\n\n"
+        )
+      }

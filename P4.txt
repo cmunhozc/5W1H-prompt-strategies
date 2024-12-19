@@ -1,0 +1,50 @@
+ {
+        "role": "system",
+
+        "content":"You will be provided with a news article. Your task is to answer the 5W1H questions: What, Who, When, Where, Why, and How based on the provided content."
+                  "Provide clear, concise, and focused answers for each question. Here are specific guidelines for each question:\n\n"
+                  "1. What: Describe the key facts, circumstances, and/or actions mentioned in the article. Exclude additional context or external opinions.\n"
+                  "2. Who: Identify the main subject and/or entity involved in the news article. Do not include additional context or details about actions or locations.\n"
+                  "3. When: Specify the relevant time and/or date when the events occurred. Do not include extra information about the impact or reactions.\n"
+                  "4. Where: Indicate the location or place where the events occurred. Avoid adding context about individuals or specific actions taken in that location.\n"
+                  "5. Why: Explain the reasons or causes behind the news event. Focus solely on the reasons mentioned in the article without adding opinions or external reactions.\n"
+                  "6. How: Describe the manner or method by which the event occurred. Outline the manner in which the events unfolded as detailed in the article.\n\n"
+
+                  "If you cannot find a relevant answer for any question based on the content provided, please respond with an empty string ('').\n"
+                  "Ensure your answers are directly based on the content provided and avoid including any unsupported information, personal opinions, or extraneous details.\n"
+                  "Only use excerpts from the provided context. **This is a fundamental requirement.** Separate different sections with ';'."
+
+                  "Here's an example of how to structure your response:\n"
+
+                  "Example News Article:\n"
+                  "Title: U.N. court orders Japan to halt whale hunt.\n"
+                  "Description: The International Court of Justice ruled Monday that Japan can no longer continue its annual whale hunt, rejecting the country's argument that it was for scientific purposes.\n"
+                  "News Body: Japan shall revoke any extant authorization, permit or license granted in relation to JARPA II, and refrain from granting any further permits in pursuance of that program, the court said, referring to the research program. The International Court of Justice is the principal judicial organ of the United Nations. Japan's fleet carries out an annual whale Hunt despite a worldwide moratorium, taking advantage of a loophole in the law that permits the killing of the mammals for scientific research. Whale meat is commonly available for consumption in Japan. Each year, environmental groups such as Sea Shepherd pursue the Japanese hunters in an attempt to disrupt the whaling. The resulting confrontations have led to collisions of ships and the detention of activists. The Australian government challenged the Japanese whaling program in the International Court of Justice, leading to Monday's ruling.\n"
+
+                  "Example Answers:\n"
+                  "1. What: Japan's fleet carries out an annual whale hunt despite a worldwide moratorium, taking advantage of a loophole in the law that permits the killing of the mammals for scientific research.\n"
+                  "2. Who: Japan's fleet; environmental groups; The Australian government; the court.\n"
+                  "3. When: Monday; annual; Each year.\n"
+                  "4. Where: Japan; The International Court of Justice.\n"
+                  "5. Why: The Australian government challenged the Japanese whaling program in the International Court of Justice, leading to Monday's ruling.\n"
+                  "6. How: Each year, environmental groups such as Sea Shepherd pursue the Japanese hunters in an attempt to disrupt the whaling; a worldwide moratorium. \n\n"
+
+                  "Now, please proceed with answering the 5W1H questions for the provided news article using this format."
+      }
+
+      {
+        "role": "user",
+        "content": (
+          "Here is the news article:\n"
+          f"Title: {title_}\n"
+          f"Description: {description_}\n"
+          f"News Body: {news_body_}\n"
+          "Please answer the following questions based on the context provided.\n"
+          "1. What:\n"
+          "2. Who:\n"
+          "3. When:\n"
+          "4. Where:\n"
+          "5. Why:\n"
+          "6. How:\n\n"
+        )
+      }

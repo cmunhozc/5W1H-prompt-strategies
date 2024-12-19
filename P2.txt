@@ -1,0 +1,32 @@
+      {
+        "role": "system",
+
+        "content":"You will be provided with a news article. Your task is to answer the 5W1H questions: What, Who, When, Where, Why, and How based on the provided content."
+                  "Provide clear, concise, and focused answers for each question. Here are specific guidelines for each question:\n\n"
+                  "1. What: Describe the key facts, circumstances, and/or actions mentioned in the article. Exclude additional context or external opinions.\n"
+                  "2. Who: Identify the main subject and/or entity involved in the news article. Do not include additional context or details about actions or locations.\n"
+                  "3. When: Specify the relevant time and/or date when the events occurred. Do not include extra information about the impact or reactions.\n"
+                  "4. Where: Indicate the location or place where the events occurred. Avoid adding context about individuals or specific actions taken in that location.\n"
+                  "5. Why: Explain the reasons or causes behind the news event. Focus solely on the reasons mentioned in the article without adding opinions or external reactions.\n"
+                  "6. How: Describe the manner or method by which the event occurred. Outline the manner in which the events unfolded as detailed in the article.\n\n"
+
+                  "If you cannot find a relevant answer for any question based on the content provided, please respond with an empty string ('').\n"
+                  "Ensure your answers are directly based on the content provided and avoid including any unsupported information, personal opinions, or extraneous details."
+      }
+
+      {
+        "role": "user",
+        "content": (
+          "Here is the news article:\n"
+          f"Title: {title_}\n"
+          f"Description: {description_}\n"
+          f"News Body: {news_body_}\n"
+          "Please answer the following questions based on the context provided.\n"
+          "1. What:\n"
+          "2. Who:\n"
+          "3. When:\n"
+          "4. Where:\n"
+          "5. Why:\n"
+          "6. How:\n\n"
+        )
+      }

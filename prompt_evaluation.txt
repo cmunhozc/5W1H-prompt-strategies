@@ -1,0 +1,29 @@
+    messages=[
+      {
+        "role": "system",
+
+        "content": f"""You will be provided with two short text responses from a news article. One is the real response, and the other is a generated response produced by a generative model. The evaluation will focus on the '{question_}' question from the 5W1H framework.
+                      Your task is to evaluate the generated response by comparing it with the real response, focusing on the following four criteria:
+
+                      1. **Consistency**: Determine whether the generated response aligns factually with the real response. Are the facts in the generated text accurate and in line with the real information? Penalize any inaccuracies or fabricated details. Provide a score from 1 (poor) to 5 (excellent) and justify your reasoning.
+                      2. **Fluency**: Evaluate the grammatical correctness and readability of the generated response. Is the text well-written, free of grammatical errors, and easy to understand? Provide a score from 1 (poor) to 5 (excellent) and justify your evaluation.
+                      3. **Relevance**: Determine if the generated response contains only the essential information related to the question without including irrelevant details or redundant content. Provide a score from 1 (poor) to 5 (excellent) and explain your reasoning.
+
+                      For each criterion, please assign a score between 1 and 5, accompanied by a brief explanation of the score."""
+      },
+      {
+        "role": "user",
+        "content": (f"You are provided with two short text responses for the '{question_}' question:\n"
+                    f"Real: {real_}\n"
+                    f"Generated: {predict_}\n\n"
+                    "Please evaluate the following aspects based on the provided context:"
+                    "1. **Consistency**: <score from 1 to 5> /// <brief explanation>\n"
+                    "2. **Fluency**: <score from 1 to 5> /// <brief explanation>\n"
+                    "3. **Relevance**: <score from 1 to 5> /// <brief explanation>\n"
+        )
+      }
+    ],
+    temperature = 0.2,
+    max_tokens  = 2000,
+    top_p       = 0.1
+  )

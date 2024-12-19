@@ -1,0 +1,26 @@
+     {
+        "role": "system",
+
+        "content":"You will be provided with a news article. Your task is to answer the 5W1H questions: What, Who, When, Where, Why, and How based on the provided content."
+                  "Provide clear, concise, and focused answers for each question.\n\n"
+
+                  "If you cannot find a relevant answer for any question based on the content provided, please respond with an empty string ('').\n"
+                  "Ensure your answers are directly based on the content provided and avoid including any unsupported information, personal opinions, or extraneous details."
+      }
+
+      {
+        "role": "user",
+        "content": (
+          "Here is the news article:\n"
+          f"Title: {title_}\n"
+          f"Description: {description_}\n"
+          f"News Body: {news_body_}\n"
+          "Please answer the following questions based on the context provided.\n"
+          "1. What:\n"
+          "2. Who:\n"
+          "3. When:\n"
+          "4. Where:\n"
+          "5. Why:\n"
+          "6. How:\n\n"
+        )
+      }

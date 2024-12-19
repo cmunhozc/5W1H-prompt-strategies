@@ -1,0 +1,199 @@
+  {
+        "role": "system",
+        "content": (
+            "You will be provided with a news article consisting of two elements: 'EVENT', which includes the title and a brief summary of the news, and 'NEWS_BODY', which contains the detailed text of the news.\n"
+            "Your task is to replace sentences in 'NEWS_BODY' that do not directly relate to or are not relevant to the news article described in 'EVENT' with '[...]'.\n\n"
+
+            "Please follow these guidelines:\n"
+            "1. Remove sentences associated with additional content, background information, or descriptive content in 'NEWS_BODY' that does not pertain directly to the main 'EVENT', and replace these sentences with '[...]'.\n"
+            "2. Ensure that the resulting 'NEWS_BODY' focuses on answering the core questions of 5W1H (Who, What, When, Where, Why, How) in relation to the main 'EVENT'. Prioritize content that addresses these questions clearly.\n"
+            "3. Preserve the exact wording of the original article, with the only modification being the replacement of sentences that are not relevant to the 'EVENT'.\n"
+            "4. If no irrelevant sentences are found or if the analysis is difficult based on the provided content, please leave the 'NEWS_BODY' unchanged.\n\n"
+
+          """Here are three examples of how to reason before answering:\n\n
+
+             Example 1:\n
+             EVENT: India protests: Doctors strike nationwide, disrupt services. Mounting anger over the rape and killing of a medical trainee at a government hospital last week in the eastern city of Kolkata has boiled over into nationwide outrage and stirred protests over violence against women.\n
+             NEWS_BODY: 1. Indian medical professionals on Saturday began a 24-hour shutdown of non-essential medical services across the country, as protests against the rape and murder of a fellow medic intensify.\n
+                        2. The shutdown, which began at 6 a.m. (0030 GMT), will cut off access to elective medical procedures and out-patient consultations in the world's most populous nation, according to a statement by the Indian Medical Association (IMA).\n
+                        3. Essential services would remain operational, the medical body said.\n
+                        4. Doctors' association calls for shutdown of services.\n
+                        5. The protests were triggered by the rape and murder of a female medical trainee last week at the R G Kar government hospital in the eastern city of Kolkata.\n
+                        6. "Doctors, especially women, are vulnerable to violence because of the nature of the profession. It is for authorities to provide for the safety of doctors inside hospitals and campuses. Both physical assaults and crimes are a result of indifference and insensitivity of the authorities concerned to the needs of doctors, nurses and other healthcare workers," IMA said in a statement on Friday.\n
+                        7. Thousands march through cities to demand better safety.\n
+                        8. Thousands of people marched through various Indian cities Friday to ask for better security for doctors at work as well as demand accountability for the woman's killing.\n
+                        9. West Bengal Chief Minister Mamata Banerjee led a rally in the state's capital city, Kolkata, on Friday, after students, doctors and residents took to the streets on the eve of India's Independence Day.\n
+                        10. Protests have generally been peaceful, but a mob on Wednesday night vandalized the hospital where the medic was killed, with protests having picked up more steam following the incident.\n
+                        11. Demonstrators also gathered near Parliament in New Delhi, and people assembled in various other cities like Mumbai and Hyderabad.\n
+                        12. Suvrankar Datta, a resident doctor at one of India's top government hospitals in New Delhi, said protests would continue and that hospital services could be hampered in the capital in the following days to come.\n
+                        13. Multiple medical unions in both government and private hospitals have backed the protests.\n
+                        14. Medic had to work a 36-hour shift.\n
+                        15. The 31-year-old medic had settled down for a short nap after working for nearly 20 hours of a 36-hour shift before she was killed, local media reported. A police volunteer has been detained in connection with the crime.\n
+                        16. But state government officers who first began investigating the case have been accused of mishandling it. The case has been transferred to a federal agency.\n
+                        17. Doctors have repeatedly cited threats to their lives while on the job, with many calling for measures like cameras on university campuses to ensure safety.\n
+                        18. Protests have largely also focused on the big problem of sexual violence against women in the country — with female Indian social media users sharing harrowing stories about the many times they have felt unsafe.\n
+                        19. rm, ch/sri (AFP, Reuters, AP).\n
+
+              REASONING: Let's think step by step.\n
+                        1. Retain: This section captures the core of the news, addressing key questions such as 'who', 'when', 'what', and 'why'.\n
+                        2. Retain: This section captures the core of the news, addressing key questions such as 'when', 'how', and 'who'.\n
+                        3. Retain: This section captures the core of the news, addressing a key question such as 'how'.\n
+                        4. Retain: This section captures the core of the news, addressing a key question such as 'who'.\n
+                        5. Retain: This section captures the core of the news, addressing key questions such as 'why', 'when', and 'where'.\n
+                        6. Partial Retain: This section partially captures the core of the news, addressing a key question such as 'who'.\n
+                        7. Retain: This section captures the core of the news, addressing a key question such as 'how'.\n
+                        8. Retain: This section captures the core of the news, addressing key questions such as 'who', 'where', 'when', and 'why'.\n
+                        9. Remove: This section provides supplementary or supporting information.\n
+                        10. Remove: This section provides supplementary or supporting information.\n
+                        11. Remove: This section does not capture the core of the news and only provides supplementary or supporting information.\n
+                        12. Remove: This section provides supplementary or supporting information.\n
+                        13. Remove: This section provides supplementary or supporting information.\n
+                        14. Remove: This section provides supplementary or supporting information.\n
+                        15. Retain: This section captures the core of the news, addressing a key question such as 'who'.\n
+                        16. Remove: This section provides supplementary or supporting information.\n
+                        17. Remove: This section provides supplementary or supporting information.\n
+                        18. Retain: This section captures the core of the news, addressing a key question such as 'why'.\n
+                        19. Remove: This section does not capture the core of the news.\n
+
+              ANSWER:
+                        Indian medical professionals on Saturday began a 24-hour shutdown of non-essential medical services across the country, as protests against the rape and murder of a fellow medic intensify.
+                        The shutdown, which began at 6 a.m. (0030 GMT), will cut off access to elective medical procedures and out-patient consultations in the world's most populous nation, according to a statement by the Indian Medical Association (IMA).
+                        Essential services would remain operational, the medical body said.
+                        Doctors' association calls for shutdown of services.
+                        The protests were triggered by the rape and murder of a female medical trainee last week at the R G Kar government hospital in the eastern city of Kolkata.
+                        "Doctors, especially women, are vulnerable to violence because of the nature of the profession. […]. Both physical assaults and crimes are a result of indifference and insensitivity of the authorities concerned to the needs of doctors, nurses and other healthcare workers," IMA said in a statement on Friday.
+                        Thousands march through cities to demand better safety.
+                        Thousands of people marched through various Indian cities Friday to ask for better security for doctors at work as well as demand accountability for the woman's killing.
+                        [...]
+                        [...]
+                        [...]
+                        [...]
+                        [...]
+                        [...]
+                        The 31-year-old medic had settled down for a short nap after working for nearly 20 hours of a 36-hour shift before she was killed, local media reported. A police volunteer has been detained in connection with the crime.
+                        [...]
+                        [...]
+                        Protests have largely also focused on the big problem of sexual violence against women in the country — with female Indian social media users sharing harrowing stories about the many times they have felt unsafe.
+                        [...] \n\n
+
+            Example 2:\n
+            EVENT:  Indiana Jones's Temple of Doom hat sells for $630k. The hat worn by actor Harrison Ford in the second instalment of the Indiana Jones film franchise has sold for nearly half a million pounds at auction.\n
+            NEWS_BODY: 1. The brown felt fedora - specifically made for the Temple of Doom film - fetched $630,000 (£487,000) in Los Angeles on Thursday.\n
+                       2. Other items of movie memorabilia were sold at the same time including props from Star Wars, Harry Potter and James Bond productions.\n
+                       3. Jones, an adventuring archaeologist, is seen with the hat early on in the movie where he and his companions jump from a crashing plane in an inflatable raft.\n
+                       4. During the scene, he is on board a plane with nightclub singer Wilhelmina "Willie" Scott, played by Kate Capshaw, and his 12-year-old friend Short Round, played by Ke Huy Quan, while escaping the clutches of a Chinese crime gang.\n
+                       5. After the flight is sabotaged by the pilot, the trio use the raft to fall from the plane, before sliding down a mountainside.\n
+                       6. The auction house said the hat was also used during additional photography at producer George Lucas's visual effects facilities.\n
+                       7. The fedora was also worn by Ford's stunt-double in the 1984 film, Dean Ferrandini, and was sold with previously unpublished photos of the stuntman wearing the now-iconic costume on location.\n
+                       8. Ferrandini died last year. The hat came from his personal collection.\n
+                       9. The sable-coloured fedora was an update to the original featured in the first Indiana Jones film - Raiders Of The Lost Ark - with a "more tapered" crown then the first, Propstore, the auction house, said.\n
+                       10. Created by the Herbert Johnson Hat Company in London, the inside lining features gold monogrammed initials "IJ".\n
+                       11. Also sold at the auction was an imperial scout trooper helmet used in the 1983 Star Wars film Return Of The Jedi - which was bought for $315,000 (£243,000) - as well as a light-up wand used by Daniel Radcliffe in Harry Potter And The Prisoner of Azkaban, which attracted a winning bid of $53,550 (£41,400).\n
+                       12. Meanwhile, a suit worn by Daniel Craig in the 2012 James Bond film Skyfall sold for $35,000 (£27,000).\n
+                       13. Brandon Alinger, Propstore chief operating officer, said the auction house was "proud to have connected such a wide expanse of fans with the historic pieces they cherish".\n
+                       14. The Indiana Jones hat fetched more than double that of another Temple of Doom fedora auctioned in 2021, which sold for $300,000 (£232,000), according to Hollywood Reporter.\n
+
+              REASONING: Let's think step by step.\n
+                        1. Retain: This section captures the core of the news, addressing key questions such as 'where', and 'when'.\n
+                        2. Remove: This section provides supplementary or supporting information.\n
+                        3. Remove: This section provides supplementary or supporting information.\n
+                        4. Remove: This section provides supplementary or supporting information.\n
+                        5. Remove: This section provides supplementary or supporting information.\n
+                        6. Retain: This section captures the core of the news, addressing a key question such as 'who'.\n
+                        7. Remove: This section provides supplementary or supporting information.\n
+                        8. Remove: This section provides supplementary or supporting information.\n
+                        9. Remove: This section provides supplementary or supporting information.\n
+                        10. Remove: This section provides supplementary or supporting information.\n
+                        11. Remove: This section provides supplementary or supporting information.\n
+                        12. Remove: This section provides supplementary or supporting information.\n
+                        13. Remove: This section provides supplementary or supporting information.\n
+                        14. Remove: This section provides supplementary or supporting information.\n
+
+              ANSWER:
+                       The brown felt fedora - specifically made for the Temple of Doom film - fetched $630,000 (£487,000) in Los Angeles on Thursday.
+                       [...]
+                       [...]
+                       [...]
+                       [...]
+                       The auction house said the hat was also used during additional photography at producer George Lucas's visual effects facilities.
+                       [...]
+                       [...]
+                       [...]
+                       [...]
+                       [...]
+                       [...]
+                       [...]
+                       [...] \n\n
+
+            Example 3:\n
+            EVENT:  X shuts Brazil operations over 'censorship' orders: Musk. A feud between X owner Elon Musk and a Brazilian top court judge has culminated in the platform shutting down its local operations for the staff’s "safety.\n
+            NEWS_BODY: 1. Social media website X, formerly Twitter, will wind up its local operations in Brazil after a legal battle at the Supreme Court over the platform's rights and responsibilities, owner Elon Musk said Sunday.\n
+                       2. But the company said the website would remain available to users in Brazil.\n
+                       3. While X argued that it was protecting free speech and standing up against "illegal secret censorship," Brazil's Supreme Court Judge Alexandre de Moraes argued he was standing up against disinformation and tyranny in Brazil.\n
+                       4. In April, Moraes had ordered an investigation into Musk, accusing him of "criminal instrumentalization" of the platform. An order seen by AFP detailed that Musk had reactivated banned accounts and was then threatened with a fine for each instance.\n
+                       5. This comes roughly a week after Venezuelan President Nicolas Maduro banned the website for a 10-day period over an election result dispute and accused Musk of inciting hate, civil war, and death.\n
+                       6. Musk has been increasingly outspoken on Latin American politics, as he has on politics in general, of late.\n
+                       7. What did X say?.\n
+                       8. "Alexandre de Moraes threatened our legal representative in Brazil with arrest if we do not comply with his censorship orders. He did so in a secret order, which we share here to expose his actions," X's Global Government Affairs department said in a post on Saturday.\n
+                       9. "We are deeply saddened that we have been forced to make this decision. The responsibility lies solely with Alexandre de Moraes," the post read. "His actions are incompatible with democratic government. The people of Brazil have a choice to make — democracy, or Alexandre de Moraes.".\n
+                       10. The post said X's numerous appeals went unheard at the court while the public was not informed of the orders. The Brazilian office's staff had "no responsibility or control" over whether content was blocked from the platform.\n
+                       11. The decision to close down local operations was taken to protect the safety of the staff, it said.\n
+                       12. Billionaire Musk, in his post, said the decision was "difficult, but, if we had agreed to Alexandre's (illegal) secret censorship and private information handover demands, there was no way we could explain our actions without being ashamed.".\n
+                       13. What did Moraes say?.\n
+                       14. Moraes has previously ordered several social media accounts Brazil's authorities suspected of spreading disinformation, including those of supporters of former President Jair Bolsonaro who tried discrediting the nation's voting system after he lost the 2022 election.\n
+                       15. "Freedom of expression doesn't mean freedom of aggression," Moraes has said. "It doesn't mean the freedom to defend tyranny.".\n
+                       16. Judge Moraes presides over Brazil's Superior Electoral Tribunal which declared Bolsonaro ineligible to run for office again last year, saying that he had spread disinformation about the election system.\n
+                       17. mk/msh (AP, AFP, Reuters).\n
+
+              REASONING: Let's think step by step.\n
+                        1. Retain: This section captures the core of the news, addressing key questions such as 'who', 'where', and 'how'.\n
+                        2. Retain: This section captures the core of the news, addressing a key question such as 'where'.\n
+                        3. Retain: This section captures the core of the news, addressing a key question such as 'who'.\n
+                        4. Remove: This section provides supplementary or supporting information.\n
+                        5. Remove: This section provides supplementary or supporting information.\n
+                        6. Remove: This section provides supplementary or supporting information.\n
+                        7. Remove: This section provides supplementary or supporting information.\n
+                        8. Retain: This section captures the core of the news, addressing key questions such as 'who', 'why', and 'when'.\n
+                        9. Retain: This section captures the core of the news, addressing a key question such as 'who'.\n
+                        10. Remove: This section provides supplementary or supporting information.\n
+                        11. Remove: This section provides supplementary or supporting information.\n
+                        12. Remove: This section provides supplementary or supporting information.\n
+                        13. Remove: This section provides supplementary or supporting information.\n
+                        14. Remove: This section provides supplementary or supporting information.\n
+                        15. Remove: This section provides supplementary or supporting information.\n
+                        16. Remove: This section provides supplementary or supporting information.\n
+                        17. Remove: This section does not capture the core of the news.\n
+
+              ANSWER:
+                       Social media website X, formerly Twitter, will wind up its local operations in Brazil after a legal battle at the Supreme Court over the platform's rights and responsibilities, owner Elon Musk said Sunday.
+                       But the company said the website would remain available to users in Brazil.
+                       While X argued that it was protecting free speech and standing up against "illegal secret censorship," Brazil's Supreme Court Judge Alexandre de Moraes argued he was standing up against disinformation and tyranny in Brazil.
+                       [...]
+                       [...]
+                       [...]
+                       [...]
+                       "Alexandre de Moraes threatened our legal representative in Brazil with arrest if we do not comply with his censorship orders. He did so in a secret order, which we share here to expose his actions," X's Global Government Affairs department said in a post on Saturday.
+                       "We are deeply saddened that we have been forced to make this decision. The responsibility lies solely with Alexandre de Moraes," the post read. "His actions are incompatible with democratic government. The people of Brazil have a choice to make — democracy, or Alexandre de Moraes.".
+                       [...]
+                       [...]
+                       [...]
+                       [...]
+                       [...]
+                       [...]
+                       [...]
+                       [...]
+                       """
+
+        )
+    }
+
+    {
+        "role": "user",
+        "content": (
+            "Here is the news article:\n"
+            f"EVENT: {event}\n"
+            f"NEWS_BODY: {news_body_}\n"
+            "Based on the provided context and the above instructions, please replace any sentences in 'NEWS_BODY' that are not directly related to or not relevant to the main 'EVENT' with '[...]'. Focus on preserving information that answers the 5W1H questions.\n"
+            "Answer:"
+        )
+    }
