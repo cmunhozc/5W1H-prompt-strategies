@@ -15,12 +15,11 @@ This project explores various prompting strategies for the 5W1H task (Who, What,
 | P7  | P7 (Extractive COT, ours) defines guidelines for removing irrelevant text. It specifically asks to remove sentences in the body of the text that do not directly relate to the headline and lead of the news. It includes one example. After irrelevant text is filtered out, the 5W1H extraction is performed using one-shot prompting.           | 
 | P8  | P8 (Extractive COT, ours) mirrors P7 but uses few-shot prompting based on two examples.           | 
 | P9  | P9 (Extractive COT, ours) follows the same logic as P8 but incorporates three examples.           | 
-| P10  | P10 (Question-level COT, ours) introduces complex reasoning for each question using one example. The reasoning per question is based on annotation guidelines used in [https://api.semanticscholar.org/CorpusID:216033759].           | 
+| P10  | P10 (Question-level COT, ours) introduces complex reasoning for each question using one example. The reasoning per question is based on annotation guidelines used in [Evaluating the Inverted Pyramid Structure through Automatic 5W1H Extraction and Summarization](https://api.semanticscholar.org/CorpusID:216033759).           | 
 | P11  | P11 (Question-level COT, ours) mirrors P10 but with two examples, making it COT few-shot.           | 
 
 
-To evaluate the quality of the responses in terms of consistency, fluency, and relevance, the methodology was inspired by the paper "SummEval: Re-evaluating Summarization Evaluation". 
-
+To evaluate the quality of the responses in terms of consistency, fluency, and relevance, the methodology was inspired by the paper [SummEval: Re-evaluating Summarization Evaluation](https://arxiv.org/abs/2007.12626).
 ```plaintext
     messages=[
       {
@@ -53,14 +52,3 @@ To evaluate the quality of the responses in terms of consistency, fluency, and r
   )
 
 ---
-
-**Reference:**
-@article{Fabbri2020SummEvalRS,
-  title={SummEval: Re-evaluating Summarization Evaluation},
-  author={A. R. Fabbri and Wojciech Kryscinski and Bryan McCann and Richard Socher and Dragomir R. Radev},
-  journal={Transactions of the Association for Computational Linguistics},
-  year={2020},
-  volume={9},
-  pages={391-409},
-  url={https://api.semanticscholar.org/CorpusID:220768873}
-}
