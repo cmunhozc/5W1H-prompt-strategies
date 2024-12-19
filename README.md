@@ -19,7 +19,9 @@ This project explores various prompting strategies for the 5W1H task (Who, What,
 | P11  | P11 (Question-level COT, ours) mirrors P10 but with two examples, making it COT few-shot.           | 
 
 
-To evaluate the quality of the responses in terms of consistency, fluency, and relevance, the methodology was inspired by the paper [SummEval: Re-evaluating Summarization Evaluation](https://arxiv.org/abs/2007.12626).
+To evaluate the quality of the responses in terms of consistency, fluency, and relevance, the methodology was inspired by the paper [SummEval: Re-evaluating Summarization Evaluation](https://arxiv.org/abs/2007.12626). The following prompt was used as part of the approach:
+
+
 ```plaintext
     messages=[
       {
